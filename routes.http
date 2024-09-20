@@ -1,0 +1,16 @@
+POST http://localhost:3333/guest
+Content-Type: application/json
+
+{
+  "nome": "José",
+  "tipo": "Indivudual"
+}
+
+
+###
+
+GET http://localhost:3333/guest
+
+###
+
+DELETE http://localhost:3333/delete/4c533e9b-0b38-41ca-a8bd-6f8987cfead0
