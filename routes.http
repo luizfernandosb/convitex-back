@@ -1,16 +1,16 @@
-POST http://localhost:3333/guest
+POST https://convitex-back.onrender.com/guest
 Content-Type: application/json
 
 {
-  "nome": "José",
+  "nome":"Julio",
   "tipo": "Indivudual"
 }
 
 
 ###
 
-GET http://localhost:3333/guest
+GET https://convitex-back.onrender.com/guest
 
 ###
 
-DELETE http://localhost:3333/delete/4c533e9b-0b38-41ca-a8bd-6f8987cfead0
+DELETE https://convitex-back.onrender.com/delete/05b55e0b-2c80-4e66-81fe-b547dcdc518e

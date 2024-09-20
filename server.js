@@ -6,12 +6,15 @@ const server = fastify();
 const database = new DatabasePostgres();
 
 server.post("/guest", async (request, reply) => {
-  const { nome, tipo } = request.body;
+  const { nome, tipo, status } = request.body;
 
   await database.create({
     nome,
     tipo,
+    status,
   });
+
+  console.log(status)
 
   return reply.status(201).send();
 });

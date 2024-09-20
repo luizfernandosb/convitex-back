@@ -16,12 +16,12 @@ export class DatabasePostgres {
      return guests
   }
 
- async create(guest) {
+  async create(guest) {
     const guestId = randomUUID();
-    const {nome, tipo}= guest
+    const { nome, tipo, status } = guest;
 
-    await sql`insert into convidados (id, nome, tipo) VALUES (${guestId}, ${nome}, ${tipo})`
-
+  
+    await sql`insert into convidados (id, nome, tipo, status) VALUES (${guestId}, ${nome}, ${tipo}, ${status})`;
   }
 
  async delete(id) {
