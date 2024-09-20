@@ -2,8 +2,9 @@ POST https://convitex-back.onrender.com/guest
 Content-Type: application/json
 
 {
-  "nome":"Julio",
-  "tipo": "Indivudual"
+  "nome":"Zé das Couve",
+  "tipo": "Ola",
+  "status": "Pendente"
 }
 
 

@@ -1,7 +1,14 @@
 import { fastify } from "fastify";
 import { DatabasePostgres } from "./database-postgres.js";
+import cors from "@fastify/cors";
 
 const server = fastify();
+
+await server.register(cors, {
+  origin: true, // Permite qualquer origem
+  methods: "GET, POST, PUT, DELETE, OPTIONS", // Todos os métodos
+  allowedHeaders: "Content-Type", // Cabeçalhos permitidos
+});
 
 const database = new DatabasePostgres();
 
@@ -14,7 +21,7 @@ server.post("/guest", async (request, reply) => {
     status,
   });
 
-  console.log(status)
+  console.log(status);
 
   return reply.status(201).send();
 });
@@ -36,6 +43,6 @@ server.delete("/delete/:id", async (request, reply) => {
 });
 
 server.listen({
-  host: '0.0.0.0',
+  host: "0.0.0.0",
   port: process.env.PORT ?? 3333,
 });
